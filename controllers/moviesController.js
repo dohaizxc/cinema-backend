@@ -7,6 +7,13 @@ const getAllMovies = asyncHandler(async (req, res) => {
 
   res.json(movies);
 });
+const getOneMovies = asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const movie = await Movie.findById(id).exec();
+  if (!movie) return res.status(400).json({ message: "No movies found" });
+
+  res.json(movie);
+});
 
 const createNewMovie = asyncHandler(async (req, res) => {
   const {
@@ -62,15 +69,29 @@ const updateMovie = asyncHandler(async (req, res) => {
 
   movie.name = name;
   movie.image = image;
+  movie.director = director;
+  movie.actors = actors;
+  movie.genre = genre;
+  movie.releaseDate = releaseDate;
   movie.duration = duration;
+  movie.language = language;
   await movie.save();
   res.json({ message: `${name} updated` });
 });
 
-const deleteMovie = asyncHandler(async (req, res) => {});
+const deleteMovie = asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  if (!id) return res.status(400).json("Movie id is required!");
+  const movie = await Movie.findById(id).exec();
+  if (!movie) return res.status(400).json({ message: "Movie not found" });
+  const result = movie.deleteOne();
+
+  res.json(`${result.name} is deleted!`);
+});
 
 module.exports = {
   getAllMovies,
+  getOneMovies,
   createNewMovie,
   updateMovie,
   deleteMovie,

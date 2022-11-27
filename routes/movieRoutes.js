@@ -6,7 +6,10 @@ router
   .route("/")
   .get(movieController.getAllMovies)
   .post(movieController.createNewMovie)
-  .patch(movieController.updateMovie)
+  .patch(movieController.updateMovie);
+router
+  .route("/:id")
+  .get(movieController.getOneMovies)
   .delete(movieController.deleteMovie);
 
 module.exports = router;
