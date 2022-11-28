@@ -22,6 +22,8 @@ app.use("/", express.static(path.join(__dirname, "/public")));
 
 app.use("/", require("./routes/root"));
 app.use("/movie", require("./routes/movieRoutes"));
+app.use("/admin", require("./routes/adminRoutes"));
+app.use("/auth", require("./routes/authRoutes"));
 
 app.use(errorHandler);
 mongoose.connection.once("open", () => {
