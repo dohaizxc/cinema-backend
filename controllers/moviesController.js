@@ -48,8 +48,8 @@ const createNewMovie = asyncHandler(async (req, res) => {
 });
 
 const updateMovie = asyncHandler(async (req, res) => {
+  const id = req.params.id;
   const {
-    id,
     name,
     image,
     director,

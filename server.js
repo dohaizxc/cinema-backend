@@ -10,9 +10,10 @@ const corsOptions = require("./config/corsOptions");
 const connectDB = require("./config/dbConn");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3500;
-
+//connect mongodb
 connectDB();
 
+//Middleware
 app.use(logger);
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -20,10 +21,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/", express.static(path.join(__dirname, "/public")));
 
+// Routers
 app.use("/", require("./routes/root"));
 app.use("/movie", require("./routes/movieRoutes"));
 app.use("/admin", require("./routes/adminRoutes"));
 app.use("/auth", require("./routes/authRoutes"));
+app.use("/province", require("./routes/provinceRoutes"));
+app.use("/cinema", require("./routes/cinemaRoutes"));
 
 app.use(errorHandler);
 mongoose.connection.once("open", () => {
