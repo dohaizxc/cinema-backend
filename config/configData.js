@@ -1,3 +1,17 @@
+const genres = [
+  { name: "Hành động", id: 0 },
+  { name: "Tình cảm", id: 1 },
+  { name: "Hài", id: 2 },
+  { name: "Kinh dị", id: 3 },
+  { name: "Khoa học viễn tưởng", id: 4 },
+  { name: "Hoạt hình", id: 5 },
+  { name: "Tâm Lý", id: 6 },
+  { name: "Tội phạm", id: 7 },
+  { name: "Phim tài liệu", id: 8 },
+  { name: "Phiêu Lưu", id: 9 },
+  { name: "Thần thoại", id: 10 },
+];
+
 const rows = ["B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N"];
 const seats = [];
 let count = 0;
@@ -47,4 +61,4 @@ const seatMap = {
   lastRow: lastRow,
 };
 
-module.exports = { seatMap, seats };
+module.exports = { seatMap, seats, genres };

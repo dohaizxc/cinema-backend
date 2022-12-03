@@ -5,12 +5,12 @@ const verifyJWT = require("../middleware/verifyJWT");
 router
   .route("/")
   .get(movieController.getAllMovies)
-  .post(verifyJWT, movieController.createNewMovie);
+  .post(movieController.createNewMovie);
 
 router
   .route("/:id")
   .get(movieController.getOneMovies)
-  .patch(verifyJWT, movieController.updateMovie)
-  .delete(verifyJWT, movieController.deleteMovie);
+  .patch(movieController.updateMovie)
+  .delete(movieController.deleteMovie);
 
 module.exports = router;

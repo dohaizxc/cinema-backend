@@ -26,6 +26,7 @@ const createNewMovie = asyncHandler(async (req, res) => {
     duration,
     language,
   } = req.body;
+  console.log({ genre });
   if (!name || !image || !duration)
     return res
       .status(400)
@@ -35,7 +36,7 @@ const createNewMovie = asyncHandler(async (req, res) => {
     image: image,
     director: director,
     actors: actors,
-    genre: genre,
+    genre: [...genre],
     releaseDate: releaseDate,
     duration: duration,
     language: language,
