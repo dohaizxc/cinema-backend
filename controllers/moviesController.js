@@ -36,7 +36,7 @@ const createNewMovie = asyncHandler(async (req, res) => {
     image: image,
     director: director,
     actors: actors,
-    genre: [...genre],
+    genre: genre,
     releaseDate: releaseDate,
     duration: duration,
     language: language,
