@@ -1,6 +1,5 @@
 const Movie = require("../models/Movie");
 const asyncHandler = require("express-async-handler");
-const dayjs = require("dayjs");
 const getAllMovies = asyncHandler(async (req, res) => {
   const movies = await Movie.find().populate("genre");
   if (!movies) return res.status(400).json({ message: "No movies found" });
@@ -23,7 +22,6 @@ const createNewMovie = asyncHandler(async (req, res) => {
     actors,
     genre,
     releaseDate,
-    endDate,
     duration,
     language,
   } = req.body;
@@ -34,18 +32,10 @@ const createNewMovie = asyncHandler(async (req, res) => {
   const movie = await Movie.create({
     name: name,
     image: image,
-<<<<<<< HEAD
     director: director,
     actors: actors,
     genre: genre,
     releaseDate: releaseDate,
-=======
-    director: [...director],
-    actors: [...actors],
-    genre: [...genre],
-    releaseDate: dayjs(releaseDate),
-    endDate: dayjs(endDate),
->>>>>>> 82c152fc6298b6db5177ebf594c0b6f918051f6a
     duration: duration,
     language: language,
   });
