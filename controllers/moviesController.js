@@ -1,8 +1,8 @@
 const Movie = require("../models/Movie");
 const asyncHandler = require("express-async-handler");
-
+const dayjs = require("dayjs");
 const getAllMovies = asyncHandler(async (req, res) => {
-  const movies = await Movie.find();
+  const movies = await Movie.find().populate("genre");
   if (!movies) return res.status(400).json({ message: "No movies found" });
 
   res.json(movies);
@@ -23,10 +23,10 @@ const createNewMovie = asyncHandler(async (req, res) => {
     actors,
     genre,
     releaseDate,
+    endDate,
     duration,
     language,
   } = req.body;
-  console.log({ genre });
   if (!name || !image || !duration)
     return res
       .status(400)
@@ -34,13 +34,15 @@ const createNewMovie = asyncHandler(async (req, res) => {
   const movie = await Movie.create({
     name: name,
     image: image,
-    director: director,
-    actors: actors,
+    director: [...director],
+    actors: [...actors],
     genre: [...genre],
-    releaseDate: releaseDate,
+    releaseDate: dayjs(releaseDate),
+    endDate: dayjs(endDate),
     duration: duration,
     language: language,
   });
+
   if (movie) {
     res.status(201).json({ message: `New movie ${name} created` });
   } else {
@@ -57,6 +59,7 @@ const updateMovie = asyncHandler(async (req, res) => {
     actors,
     genre,
     releaseDate,
+    endDate,
     duration,
     language,
   } = req.body;
@@ -74,6 +77,7 @@ const updateMovie = asyncHandler(async (req, res) => {
   movie.actors = actors;
   movie.genre = genre;
   movie.releaseDate = releaseDate;
+  movie.endDate = endDate;
   movie.duration = duration;
   movie.language = language;
   await movie.save();
@@ -86,7 +90,6 @@ const deleteMovie = asyncHandler(async (req, res) => {
   const movie = await Movie.findById(id).exec();
   if (!movie) return res.status(400).json({ message: "Movie not found" });
   const result = movie.deleteOne();
-
   res.json(`${result.name} is deleted!`);
 });
 

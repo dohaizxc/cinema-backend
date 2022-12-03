@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const MovieSchema = new mongoose.Schema({
   name: {
@@ -8,8 +9,9 @@ const MovieSchema = new mongoose.Schema({
   image: String,
   director: [String],
   actors: [String],
-  genre: [String],
+  genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
   releaseDate: Date,
+  endDate: Date,
   duration: Number,
   language: String,
 });
