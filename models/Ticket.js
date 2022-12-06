@@ -8,6 +8,7 @@ const TicketSchema = new mongoose.Schema({
   foods: [
     {
       food_id: Number,
+      quantity: Number,
     },
   ],
   total: Number,

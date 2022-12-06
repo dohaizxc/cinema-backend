@@ -28,6 +28,7 @@ app.use("/admin", require("./routes/adminRoutes"));
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/province", require("./routes/provinceRoutes"));
 app.use("/cinema", require("./routes/cinemaRoutes"));
+app.use("/room", require("./routes/roomRoutes"));
 app.use("/genre", require("./routes/initConfigRoutes"));
 app.use("/food", require("./routes/foodRoutes"));
 app.use(errorHandler);
