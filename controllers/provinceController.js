@@ -10,7 +10,7 @@ const getAllProvinces = asyncHandler(async (req, res) => {
 });
 const getOneProvinces = asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const province = await Province.findById(id).exec();
+  const province = await Province.findById(id).populate("cinemas");
   if (!province) return res.status(400).json({ message: "No Provinces found" });
 
   res.json(province);

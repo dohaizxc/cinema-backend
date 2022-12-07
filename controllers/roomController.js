@@ -10,7 +10,7 @@ const getAllRooms = asyncHandler(async (req, res) => {
 });
 const getOneRooms = asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const room = await Room.findById(id).exec();
+  const room = await Room.findById(id).populate("cinema");
   if (!room) return res.status(400).json({ message: "No rooms found" });
 
   res.json(room);

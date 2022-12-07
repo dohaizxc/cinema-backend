@@ -14,6 +14,9 @@ const MovieSchema = new mongoose.Schema({
   endDate: Date,
   duration: Number,
   language: String,
+  description: String,
+  rated: String,
+  trailer_url: String,
 });
 
 module.exports = mongoose.model("Movie", MovieSchema);

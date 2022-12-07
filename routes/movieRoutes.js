@@ -6,7 +6,7 @@ router
   .route("/")
   .get(movieController.getAllMovies)
   .post(movieController.createNewMovie);
-
+router.route("/date").get(movieController.getMovieByDate);
 router
   .route("/:id")
   .get(movieController.getOneMovies)

@@ -24,6 +24,9 @@ const createNewMovie = asyncHandler(async (req, res) => {
     releaseDate,
     duration,
     language,
+    description,
+    rated,
+    trailer_url,
   } = req.body;
   if (!name || !image || !duration)
     return res
@@ -38,6 +41,9 @@ const createNewMovie = asyncHandler(async (req, res) => {
     releaseDate: releaseDate,
     duration: duration,
     language: language,
+    description: description,
+    rated: rated,
+    trailer_url: trailer_url,
   });
 
   if (movie) {
@@ -59,6 +65,9 @@ const updateMovie = asyncHandler(async (req, res) => {
     endDate,
     duration,
     language,
+    description,
+    rated,
+    trailer_url,
   } = req.body;
   if (!id || !name || !image || !duration)
     return res
@@ -77,6 +86,9 @@ const updateMovie = asyncHandler(async (req, res) => {
   movie.endDate = endDate;
   movie.duration = duration;
   movie.language = language;
+  movie.description = description;
+  movie.rated = rated;
+  movie.trailer_url = trailer_url;
   await movie.save();
   res.json({ message: `${name} updated` });
 });
@@ -90,10 +102,25 @@ const deleteMovie = asyncHandler(async (req, res) => {
   res.json(`${result.name} is deleted!`);
 });
 
+const getMovieByDate = asyncHandler(async (req, res) => {
+  let date = new Date("2022-12-6");
+  let nextDate = new Date(date);
+  const movies = await Movie.find({
+    releaseDate: {
+      $gte: date,
+      $lt: nextDate.setDate(date.getDate() + 1),
+    },
+  }).populate("genre");
+  console.log(date, nextDate);
+  if (!movies) return res.status(400).json({ message: "No movies found" });
+
+  res.json(movies);
+});
 module.exports = {
   getAllMovies,
   getOneMovies,
   createNewMovie,
   updateMovie,
   deleteMovie,
+  getMovieByDate,
 };

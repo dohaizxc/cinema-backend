@@ -3,14 +3,16 @@ const Cinema = require("../models/Cinema");
 const asyncHandler = require("express-async-handler");
 
 const getAllCinemas = asyncHandler(async (req, res) => {
-  const cinemas = await Cinema.find().populate("province");
+  const cinemas = await Cinema.find().populate("province").populate("rooms");
   if (!cinemas) return res.status(400).json({ message: "No cinemas found" });
 
   res.json(cinemas);
 });
 const getOneCinemas = asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const cinema = await Cinema.findById(id).exec().populate("province");
+  const cinema = await Cinema.findById(id)
+    .populate("province")
+    .populate("rooms");
   if (!cinema) return res.status(400).json({ message: "No cinemas found" });
 
   res.json(cinema);

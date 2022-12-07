@@ -6,7 +6,7 @@ const RoomSchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
-  showtimes: [{ type: Schema.Types.ObjectId, ref: "Showtime" }],
+  Showtimes: [{ type: Schema.Types.ObjectId, ref: "Showtime" }],
   cinema: { type: Schema.Types.ObjectId, ref: "Cinema" },
 });
 
