@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const ShowtimeController = require("../controllers/ShowtimeController");
+const ShowtimeController = require("../controllers/showtimeController");
 const verifyJWT = require("../middleware/verifyJWT");
 router
   .route("/")

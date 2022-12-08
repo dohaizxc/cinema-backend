@@ -2,20 +2,20 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const ShowtimeSchema = new mongoose.Schema({
-  start_at: {
+  date: {
     type: Date,
     require: true,
   },
-  end_at: {
-    type: Date,
+  time: {
+    type: String,
     require: true,
   },
-  numerical_order: {
-    type: Number,
+  time_end: {
+    type: String,
     require: true,
   },
-  movie: { type: Schema.Types.ObjectId, ref: "Movie" },
-  room: { type: Schema.Types.ObjectId, ref: "Room" },
+  movieId: { type: Schema.Types.ObjectId, ref: "Movie" },
+  roomId: { type: Schema.Types.ObjectId, ref: "Room" },
   tickets: [{ type: Schema.Types.ObjectId, ref: "Ticket" }],
 });
 
