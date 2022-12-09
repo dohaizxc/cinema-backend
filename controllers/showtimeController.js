@@ -2,55 +2,51 @@ const Showtime = require("../models/Showtime");
 const Movie = require("../models/Movie");
 const Room = require("../models/Room");
 const asyncHandler = require("express-async-handler");
-const Cinema = require("../models/Cinema");
+const Province = require("../models/Province");
 
-const getAllShowtimes = asyncHandler(async (req, res) => {
-  const { date, cinemaId, movieId } = req.body;
+const getShowtimesByProvince = asyncHandler(async (req, res) => {
+  const { provinceId, date, movieId } = req.params;
+  console.log(req.params);
+  if (!provinceId || !date || !movieId)
+    return res
+      .status(400)
+      .json({ message: "ProvinceId,movieId, date is required!" });
 
-  if (!date && !cinemaId && !movieId) {
-    const showtimes = await Showtime.find();
-    if (!showtimes)
-      return res.status(400).json({ message: "No Showtimes found" });
-    showtimes.sort(function (a, b) {
-      const aHour = Number(a.time?.split(":")[0]);
-      const bHour = Number(b.time?.split(":")[0]);
-      if (aHour == bHour)
-        return Number(a.time?.split(":")[1]) - Number(b.time?.split(":")[1]);
-      return aHour - bHour;
-    });
-
-    res.json(showtimes);
-  } else {
+  const province = await Province.findById(provinceId).populate("cinemas");
+  let currentDate = new Date(date);
+  let nextDate = new Date(date);
+  const showtimes = [];
+  for (const cinema of province.cinemas) {
     const filter = {
-      $and: [],
-    };
-    if (date) {
-      let currentDate = new Date(date);
-      let nextDate = new Date(date);
-      filter.$and.push({
-        date: {
-          $gte: date,
-          $lt: nextDate.setDate(currentDate.getDate() + 1),
+      $and: [
+        {
+          date: {
+            $gte: date,
+            $lt: nextDate.setDate(currentDate.getDate() + 1),
+          },
         },
-      });
-    }
+        { movieId: { $eq: movieId } },
+        { roomId: { $in: cinema.rooms } },
+      ],
+    };
 
-    if (cinemaId) {
-      const cinema = await Cinema.findById(cinemaId);
-      filter.$and.push({ roomId: { $in: cinema.rooms } });
-    }
+    const showtimesCinema = await Showtime.find(filter)
+      .populate("movieId")
+      .populate("roomId");
 
-    const showtimes = await Showtime.find(filter);
-    if (!showtimes)
-      return res.status(400).json({ message: "No Showtimes found" });
-    showtimes.sort(function (a, b) {
+    showtimesCinema.sort(function (a, b) {
       const aHour = a.time?.split(":")[0];
       const bHour = b.time?.split(":")[0];
       if (aHour == bHour) return a.time?.split(":")[1] - b.time?.split(":")[1];
       return aHour - bHour;
     });
-    res.json(showtimes);
+
+    showtimes.push({
+      cinema: cinema,
+      showtimes: [...showtimesCinema],
+    });
   }
+  res.json(showtimes);
 });
 const getOneShowtimes = asyncHandler(async (req, res) => {
   const id = req.params.id;
@@ -112,7 +108,7 @@ const deleteShowtime = asyncHandler(async (req, res) => {
 });
 
 module.exports = {
-  getAllShowtimes,
+  getShowtimesByProvince,
   getOneShowtimes,
   createNewShowtime,
   deleteShowtime,
