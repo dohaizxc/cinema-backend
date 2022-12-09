@@ -7,7 +7,7 @@ const Province = require("../models/Province");
 const getShowtimesByProvince = asyncHandler(async (req, res) => {
   const { provinceId, date, movieId } = req.params;
   console.log(req.params);
-  if (!provinceId || !date || !movieId)
+  if (!provinceId || !date)
     return res
       .status(400)
       .json({ message: "ProvinceId,movieId, date is required!" });
@@ -25,11 +25,13 @@ const getShowtimesByProvince = asyncHandler(async (req, res) => {
             $lt: nextDate.setDate(currentDate.getDate() + 1),
           },
         },
-        { movieId: { $eq: movieId } },
+
         { roomId: { $in: cinema.rooms } },
       ],
     };
-
+    if (movieId !== "null") {
+      filter.$and.push({ movieId: { $eq: movieId } },)
+    }
     const showtimesCinema = await Showtime.find(filter)
       .populate("movieId")
       .populate("roomId");

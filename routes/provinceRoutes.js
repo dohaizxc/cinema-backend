@@ -11,6 +11,6 @@ router
   .route("/:id")
   .get(provinceController.getOneProvinces)
   .patch(provinceController.updateProvince)
-  .delete(verifyJWT, provinceController.deleteProvince);
+  .delete(provinceController.deleteProvince);
 
 module.exports = router;
