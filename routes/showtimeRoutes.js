@@ -7,7 +7,7 @@ router.route("/").post(ShowtimeController.createNewShowtime);
 router;
 router
   .route("/:id")
-
+  .get(ShowtimeController.getOneShowtime)
   .delete(ShowtimeController.deleteShowtime);
 
 router

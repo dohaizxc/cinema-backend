@@ -96,7 +96,7 @@ const getShowtimesByProvince = asyncHandler(async (req, res) => {
   }
   res.json(showtimes);
 });
-const getOneShowtimes = asyncHandler(async (req, res) => {
+const getOneShowtime = asyncHandler(async (req, res) => {
   const id = req.params.id;
   const showtime = await Showtime.findById(id)
     .populate("movieId")
@@ -158,7 +158,7 @@ const deleteShowtime = asyncHandler(async (req, res) => {
 module.exports = {
   getShowtimesByProvince,
   getShowtimeByCinema,
-  getOneShowtimes,
+  getOneShowtime,
   createNewShowtime,
   deleteShowtime,
 };
