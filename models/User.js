@@ -19,12 +19,10 @@ const UserSchema = new mongoose.Schema({
 
   dayOfBirth: {
     type: Date,
-    require: true,
   },
 
   gender: {
     type: String,
-    require: true,
   },
 
   name: {

@@ -103,7 +103,9 @@ const getOneShowtime = asyncHandler(async (req, res) => {
     .populate("roomId");
   if (!showtime) return res.status(400).json({ message: "No Showtimes found" });
 
-  res.json(showtime);
+  const cinema = await Cinema.findById(showtime.roomId.cinema);
+
+  res.json({ cinema: cinema, showtime: showtime });
 });
 
 const createNewShowtime = asyncHandler(async (req, res) => {
