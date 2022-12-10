@@ -50,7 +50,7 @@ const createTicket = asyncHandler(async (req, res) => {
 
     movieName: showtimeFound.movieId.name,
     cinemaName: cinema.name,
-
+    movieImage: showtimeFound.movieId.image,
     time:
       showtimeFound.time +
       " - " +

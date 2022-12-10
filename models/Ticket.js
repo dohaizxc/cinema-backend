@@ -14,6 +14,7 @@ const TicketSchema = new mongoose.Schema({
   totalTicket: Number,
   totalFood: Number,
   id: Number,
+  movieImage: String,
 });
 
 module.exports = mongoose.model("Ticket", TicketSchema);
