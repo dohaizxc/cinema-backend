@@ -29,7 +29,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  ticket: [{ type: Schema.Types.ObjectId, ref: "Ticket" }],
+  tickets: [{ type: Schema.Types.ObjectId, ref: "Ticket" }],
 });
 
 module.exports = mongoose.model("User", UserSchema);

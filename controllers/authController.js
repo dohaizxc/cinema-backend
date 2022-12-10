@@ -95,7 +95,7 @@ const userLogin = asyncHandler(async (req, res) => {
 
   const accessToken = jwt.sign(
     {
-      AdminInfo: {
+      UserInfo: {
         email: foundUser.email,
       },
     },
@@ -105,8 +105,8 @@ const userLogin = asyncHandler(async (req, res) => {
 
   const refreshToken = jwt.sign(
     {
-      AdminInfo: {
-        email: foundAdmin.email,
+      UserInfo: {
+        email: foundUser.email,
       },
     },
     process.env.REFRESH_TOKEN_SECRET,
@@ -118,7 +118,7 @@ const userLogin = asyncHandler(async (req, res) => {
     sameSite: "none",
     maxAge: 24 * 60 * 60 * 1000,
   });
-  res.json({ accessToken });
+  res.json({ accessToken, foundUser });
 });
 
 const logout = (req, res) => {
@@ -129,4 +129,4 @@ const logout = (req, res) => {
   res.json({ message: "Cookie cleared" });
 };
 
-module.exports = { adminLogin, adminRefresh, logout };
+module.exports = { adminLogin, adminRefresh, logout, userLogin };
