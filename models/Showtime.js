@@ -14,6 +14,7 @@ const ShowtimeSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  seats: [{ type: Number }],
   movieId: { type: Schema.Types.ObjectId, ref: "Movie" },
   roomId: { type: Schema.Types.ObjectId, ref: "Room" },
   tickets: [{ type: Schema.Types.ObjectId, ref: "Ticket" }],

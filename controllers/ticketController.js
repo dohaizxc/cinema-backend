@@ -13,6 +13,7 @@ const createTicket = asyncHandler(async (req, res) => {
       .json({ message: "Showtime, user, seat are required!" });
 
   const showtimeFound = await Showtime.findById(showtime)
+    .populate("roomId")
     .populate("movieId")
     .populate("roomId");
   const userFound = await User.findById(user).exec();
@@ -22,7 +23,10 @@ const createTicket = asyncHandler(async (req, res) => {
       .status(400)
       .json({ message: "showtime, showtime are not correct" });
   const cinema = await Cinema.findById(showtimeFound.roomId.cinema);
-
+  for (oneSeat of seat) {
+    if (showtimeFound.seats.indexOf(oneSeat) !== -1)
+      return res.status(400).json({ message: `Ghế  bạn chọn đã có người đặt` });
+  }
   const pickingSeat = seats.filter((seatItem) => seat.includes(seatItem.id));
   const pickingSeatCode = pickingSeat?.map((seat) => seat.code);
   const date = new Date(showtimeFound.date);
@@ -51,6 +55,8 @@ const createTicket = asyncHandler(async (req, res) => {
     movieName: showtimeFound.movieId.name,
     cinemaName: cinema.name,
     movieImage: showtimeFound.movieId.image,
+    room: showtimeFound.roomId.name,
+
     time:
       showtimeFound.time +
       " - " +
@@ -67,6 +73,10 @@ const createTicket = asyncHandler(async (req, res) => {
 
   if (ticket) {
     showtimeFound.tickets.push(ticket);
+    console.log(seat);
+    if (!showtimeFound.seats) {
+      showtimeFound.seats = [...seat];
+    } else showtimeFound.seats = [...showtimeFound.seats, ...seat];
     await showtimeFound.save();
     userFound.tickets.push(ticket);
     await userFound.save();
