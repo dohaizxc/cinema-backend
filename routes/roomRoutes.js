@@ -5,12 +5,12 @@ const verifyJWT = require("../middleware/verifyJWT");
 router
   .route("/")
   .get(roomController.getAllRooms)
-  .post(roomController.createNewRoom);
+  .post(verifyJWT, roomController.createNewRoom);
 
 router
   .route("/:id")
   .get(roomController.getOneRooms)
-  .patch(roomController.updateRoom)
-  .delete(roomController.deleteRoom);
+  .patch(verifyJWT, roomController.updateRoom)
+  .delete(verifyJWT, roomController.deleteRoom);
 
 module.exports = router;

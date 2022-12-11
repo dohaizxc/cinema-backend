@@ -5,12 +5,12 @@ const verifyJWT = require("../middleware/verifyJWT");
 router
   .route("/")
   .get(provinceController.getAllProvinces)
-  .post(provinceController.createNewProvince);
+  .post(verifyJWT, provinceController.createNewProvince);
 
 router
   .route("/:id")
   .get(provinceController.getOneProvinces)
-  .patch(provinceController.updateProvince)
-  .delete(provinceController.deleteProvince);
+  .patch(verifyJWT, provinceController.updateProvince)
+  .delete(verifyJWT, provinceController.deleteProvince);
 
 module.exports = router;

@@ -18,10 +18,11 @@ const createTicket = asyncHandler(async (req, res) => {
     .populate("roomId");
   const userFound = await User.findById(user).exec();
 
-  if (!showtimeFound || !userFound)
+  if (!showtimeFound || !userFound || !userFound.email === req.user)
     return res
       .status(400)
       .json({ message: "showtime, showtime are not correct" });
+
   const cinema = await Cinema.findById(showtimeFound.roomId.cinema);
   for (oneSeat of seat) {
     if (showtimeFound.seats.indexOf(oneSeat) !== -1)
@@ -94,8 +95,16 @@ const getOneTicket = asyncHandler(async (req, res) => {
 
   res.json(ticket);
 });
+const getTicketByUser = asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const user = await User.findById(id);
+  if (!user) return res.status(400).json({ message: "User not found" });
+
+  res.json(user.tickets);
+});
 
 module.exports = {
   createTicket,
   getOneTicket,
+  getTicketByUser,
 };

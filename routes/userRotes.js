@@ -6,8 +6,8 @@ router.route("/").get(verifyJWT, userController.getAllUsers);
 
 router
   .route("/:id")
-  .get(userController.getOneUser)
-  .patch(userController.updateUser)
-  .delete(userController.deleteUser);
+  .get(verifyJWT, userController.getOneUser)
+  .patch(verifyJWT, userController.updateUser)
+  .delete(verifyJWT, userController.deleteUser);
 
 module.exports = router;
