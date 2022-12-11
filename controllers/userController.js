@@ -51,7 +51,7 @@ const updateUser = asyncHandler(async (req, res) => {
       .json("email, password, phoneNumber,name are required!");
 
   const user = await User.findById(id);
-  if (user) return res.status(400).json({ message: "email is existed" });
+  if (!user) return res.status(400).json({ message: "user not found" });
   user.name = name;
   user.email = email;
   user.phoneNumber = phoneNumber;
