@@ -97,7 +97,7 @@ const getOneTicket = asyncHandler(async (req, res) => {
 });
 const getTicketByUser = asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const user = await User.findById(id);
+  const user = await User.findById(id).populate("tickets");
   if (!user) return res.status(400).json({ message: "User not found" });
 
   res.json(user.tickets);
