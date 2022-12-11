@@ -85,7 +85,7 @@ const userLogin = asyncHandler(async (req, res) => {
   if (!email || !password) {
     return res.status(400).json({ message: "email, password are required!" });
   }
-  const foundUser = await User.findOne({ email }).exec();
+  const foundUser = await User.findOne({ email }).populate("tickets");
   if (!foundUser || !foundUser.active)
     return res.status(401).json({ message: "Unauthorized" });
 
