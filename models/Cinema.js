@@ -12,6 +12,7 @@ const CinemaSchema = new mongoose.Schema({
   },
   rooms: [{ type: Schema.Types.ObjectId, ref: "Room" }],
   province: { type: Schema.Types.ObjectId, ref: "Province" },
+  address_url: String,
 });
 
 module.exports = mongoose.model("Cinema", CinemaSchema);

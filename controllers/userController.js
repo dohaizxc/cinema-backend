@@ -18,7 +18,7 @@ const register = asyncHandler(async (req, res) => {
     password: hashPassword,
     phoneNumber: phoneNumber,
     name: name,
-    dayOfBirth: new Date(dayOfBirth),
+    dayOfBirth: dayOfBirth,
     gender: gender,
   });
 

@@ -19,8 +19,8 @@ const getOneCinemas = asyncHandler(async (req, res) => {
 });
 
 const createNewCinema = asyncHandler(async (req, res) => {
-  const { name, provinceId, address } = req.body;
-  if (!name || !provinceId || !address)
+  const { name, provinceId, address, address_url } = req.body;
+  if (!name || !provinceId || !address || !address_url)
     return res
       .status(400)
       .json({ message: "name, provinceId, address are required!" });
@@ -31,6 +31,7 @@ const createNewCinema = asyncHandler(async (req, res) => {
     name: name,
     address: address,
     province: provinceId,
+    address_url: address_url,
   });
   if (cinema) {
     province.cinemas.push(cinema);
@@ -43,7 +44,7 @@ const createNewCinema = asyncHandler(async (req, res) => {
 
 const updateCinema = asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const { name, address, provinceId } = req.body;
+  const { name, address, provinceId, address_url } = req.body;
   if (!id || !address || !provinceId || !name)
     return res
       .status(400)
@@ -58,6 +59,7 @@ const updateCinema = asyncHandler(async (req, res) => {
   cinema.name = name;
   cinema.address = address;
   cinema.provinceId = provinceId;
+  cinema.address_url = address_url;
   await cinema.save();
   res.json({ message: `${name} updated` });
 });
