@@ -7,6 +7,9 @@ const createNewAdmin = asyncHandler(async (req, res) => {
   if (!email || !password)
     return res.status(400).json({ message: "email, password are required!" });
 
+  const foundAdmin = await Admin.findOne({ email: email });
+  if (foundAdmin) return res.status(400).json({ message: "email is existed" });
+
   const hashPassword = await bcrypt.hash(password, 10);
   const admin = await Admin.create({
     email: email,

@@ -20,12 +20,11 @@ const adminLogin = asyncHandler(async (req, res) => {
 
   const accessToken = jwt.sign(
     {
-      AdminInfo: {
+      Info: {
         email: foundAdmin.email,
       },
     },
-    process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: "30s" }
+    process.env.ACCESS_TOKEN_SECRET
   );
 
   const refreshToken = jwt.sign(
@@ -43,7 +42,7 @@ const adminLogin = asyncHandler(async (req, res) => {
     sameSite: "none",
     maxAge: 24 * 60 * 60 * 1000,
   });
-  res.json({ accessToken });
+  res.json({ accessToken, foundAdmin });
 });
 
 const adminRefresh = (req, res) => {
@@ -75,7 +74,7 @@ const adminRefresh = (req, res) => {
         { expiresIn: "1d" }
       );
 
-      res.json({ accessToken });
+      res.json({ accessToken, foundAdmin });
     })
   );
 };
@@ -95,17 +94,16 @@ const userLogin = asyncHandler(async (req, res) => {
 
   const accessToken = jwt.sign(
     {
-      UserInfo: {
+      Info: {
         email: foundUser.email,
       },
     },
-    process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: "1d" }
+    process.env.ACCESS_TOKEN_SECRET
   );
 
   const refreshToken = jwt.sign(
     {
-      UserInfo: {
+      Info: {
         email: foundUser.email,
       },
     },

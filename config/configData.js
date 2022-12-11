@@ -33,7 +33,7 @@ rows.forEach((row) => {
 for (let i = 1; i < 9; i++) {
   const seat = {
     type: "Couple",
-    code: "O" + i,
+    code: "S" + i,
     price: 150000,
     id: count++,
   };

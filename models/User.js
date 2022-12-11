@@ -24,7 +24,11 @@ const UserSchema = new mongoose.Schema({
   gender: {
     type: String,
   },
-
+  active: {
+    type: Boolean,
+    require: true,
+    default: true,
+  },
   name: {
     type: String,
     require: true,

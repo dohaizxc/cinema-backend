@@ -52,7 +52,7 @@ const getShowtimeByCinema = asyncHandler(async (req, res) => {
 
 const getShowtimesByProvince = asyncHandler(async (req, res) => {
   const { provinceId, date, movieId } = req.params;
-  console.log(req.params);
+
   if (!provinceId || !date)
     return res
       .status(400)
@@ -125,7 +125,7 @@ const createNewShowtime = asyncHandler(async (req, res) => {
     Number(time.split(":")[0]) * 60 + Number(time.split(":")[1]);
   const hour_end = Math.floor((movie.duration + totalMinute) / 60);
   const minute_end = (movie.duration + totalMinute) % 60;
-  console.log(hour_end, totalMinute);
+
   const time_end = hour_end + ":" + minute_end;
   const showtime = await Showtime.create({
     date: date,
