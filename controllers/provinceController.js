@@ -12,8 +12,7 @@ const getOneProvinces = asyncHandler(async (req, res) => {
   const id = req.params.id;
   const province = await Province.findById(id).populate("cinemas");
   if (!province) return res.status(400).json({ message: "No Provinces found" });
-
-  res.json(province);
+  res.json(province.cinemas);
 });
 
 const createNewProvince = asyncHandler(async (req, res) => {

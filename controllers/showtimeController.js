@@ -32,8 +32,6 @@ const getShowtimeByCinema = asyncHandler(async (req, res) => {
     };
 
     const showtimesMovies = await Showtime.find(filter)
-      .populate("movieId")
-      .populate("roomId");
 
     showtimesMovies.sort(function (a, b) {
       const aHour = a.time?.split(":")[0];

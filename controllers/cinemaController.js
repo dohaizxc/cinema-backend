@@ -14,7 +14,6 @@ const getOneCinemas = asyncHandler(async (req, res) => {
     .populate("province")
     .populate("rooms");
   if (!cinema) return res.status(400).json({ message: "No cinemas found" });
-
   res.json(cinema);
 });
 
