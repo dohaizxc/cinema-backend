@@ -4,7 +4,7 @@ const offers = [
   {
     id: "d_1",
     name: "LỄ HỘI MERCHANDISE",
-    img: "./img/news_detail_img_d1.jpg",
+    img: "/src/assets/img/news_detail_img_d1.jpg",
     date: "Từ ngày 07/12/2022 - 09/12/2022.",
     contents: [
       "- Mua 01 Merchandise (có kèm nước) trị giá 149K, có ngay 01 phần Bắp mix.",
@@ -26,7 +26,7 @@ const offers = [
   {
     id: "d_2",
     name: "TUẦN LỄ PHIM KHOA HỌC CÔNG NGHỆ QUỐC TẾ VINFUTURE 2022",
-    img: "./img/news_detail_img_d2.jpg",
+    img: "/src/assets/img/news_detail_img_d2.jpg",
     date: "Từ ngày 06/12 - 11/12/2022.",
     contents: [
       `- 25.000 vé mời sẽ được VinFuture dành tặng miễn phí cho công chúng trên toàn quốc từ 6-11/12, 
@@ -44,7 +44,7 @@ const offers = [
   {
     id: "d_3",
     name: "MÙA BOM TẤN CUỐI NĂM ZALOPAY TẶNG VÉ 9K!",
-    img: "./img/news_detail_img_d3.jpg",
+    img: "/src/assets/img/news_detail_img_d3.jpg",
     date: "Từ ngày 5/12 - 31/12/2022.",
     contents: [
       "- Bạn mới: Chỉ 9.000đ/vé khi thanh toán bằng Ví điện tử ZaloPay.",
@@ -68,7 +68,7 @@ const offers = [
   {
     id: "d_4",
     name: "PHIM TƯƠNG TÁC PHI VỤ NỬA ĐÊM: HƯỚNG DẪN TƯƠNG TÁC TẠI RẠP",
-    img: "./img/news_detail_img_d4.jpg",
+    img: "/src/assets/img/news_detail_img_d4.jpg",
     date: "Từ ngày 25/11/2022.",
     contents: ["- Tương tác với phim tại rạp CGV."],
     address: "Các cụm rạp CGV Hồ Chí Minh, Hà Nội.",
@@ -85,7 +85,7 @@ const offers = [
   {
     id: "d_5",
     name: "BÙNG CHÁY WORLD CUP ĐI GROUP THÊM VUI",
-    img: "./img/news_detail_img_d5.jpg",
+    img: "/src/assets/img/news_detail_img_d5.jpg",
     date: "24/11/2022 - 14/12/2022.",
     contents: [
       "- Khách hàng mua 05 vé xem phim bất kì + 01 Warm Up Combo, sẽ được tặng 02 Ly Coca-Cola Contour.",
@@ -105,7 +105,7 @@ const offers = [
   {
     id: "d_6",
     name: "RA RẠP GẶP LUFFY RINH QUÀ XINH HẾT Ý",
-    img: "./img/news_detail_img_d6.jpg",
+    img: "/src/assets/img/news_detail_img_d6.jpg",
     date: "Từ ngày 02/12/2022 đến khi hết quà tặng.",
     contents: [
       "- Khách hàng mua một lần 2 vé xem phim ONE PIECE FILM RED sẽ được tặng 1 huy hiệu và 1 bìa hồ sơ hoặc 2 huy hiệu hoặc 2 bìa hồ sơ.",
@@ -125,7 +125,7 @@ const offers = [
   {
     id: "d_7",
     name: "NHẬP HỘI U22 ZALOPAY VỚI CHỈ 1K/VÉ CGV! GIẢM TƯNG BỪNG, GIẢM ĐẬM SÂU",
-    img: "./img/news_detail_img_d7.jpg",
+    img: "/src/assets/img/news_detail_img_d7.jpg",
     date: "Từ ngày 05/12 - 31/12/2022.",
     contents: [
       "- Bạn mới: Chỉ 1.000đ/vé khi thành viên U22 thanh toán bằng Ví điện tử ZaloPay.",
@@ -149,7 +149,7 @@ const offers = [
   {
     id: "d_8",
     name: "QUÀ TẶNG SINH NHẬT THÀNH VIÊN CGV THÁNG 12",
-    img: "./img/news_detail_img_d8.jpg",
+    img: "/src/assets/img/news_detail_img_d8.jpg",
     date: "Từ ngày 01/12/2022 - 31/12/2022.",
     contents: [
       `- CGV xin gửi lời chúc mừng đến các thành viên có sinh nhật trong tháng 12. Và với quyền lợi thành viên, CGV tặng bạn Combo 1 Bắp 2 Nước. Hy vọng bạn sẽ có một sinh nhật thật vui và ý nghĩa.`,
@@ -167,7 +167,7 @@ const offers = [
   {
     id: "d_9",
     name: "CHƯƠNG TRÌNH ƯU ĐÃI DÀNH CHO CHỦ THẺ CITI TẠI CGV “MUA 02 VÉ XEM PHIM TẶNG 01 MY COMBO”",
-    img: "./img/news_detail_img_d9.jpg",
+    img: "/src/assets/img/news_detail_img_d9.jpg",
     date: "Áp dụng vào thứ 6 hàng tuần từ 02/12/2022 – 02/06/2023  từ 6:00 đến 23:59.",
     contents: [
       `- Khách hàng sẽ nhận một (01) ưu đãi MY COMBO bao gồm một (01) phần Bắp lớn (44oz) và một (01) Ly Nước Ngọt cỡ vừa (32oz) khi mua hai (02) vé xem phim có xuất chiếu tại các cụm rạp CGV tại Hồ Chí Minh và Hà Nội, 
@@ -190,7 +190,7 @@ const offers = [
   {
     id: "d_10",
     name: "CHƯƠNG TRÌNH ƯU ĐÃI DÀNH CHO CHỦ THẺ NGÂN HÀNG BẢN VIỆT TẠI CGV",
-    img: "./img/news_detail_img_d10.jpg",
+    img: "/src/assets/img/news_detail_img_d10.jpg",
     date: "Thứ Năm, Thứ Sáu, Thứ Bảy và Chủ Nhật hàng tuần từ ngày  30/11/2022– 31/12/2023.",
     contents: [
       "- Mua 02 vé xem phim CGV chỉ với 90.000 đồng khi mua vé trực tuyến trên ứng dụng CGV Cinema hoặc website www.cgv.vn.",
@@ -214,7 +214,7 @@ const offers = [
   {
     id: "d_11",
     name: "THỨ TƯ VUI VẺ - VÉ PHIM ƯU ĐÃI",
-    img: "./img/news_detail_img_d11.jpg",
+    img: "/src/assets/img/news_detail_img_d11.jpg",
     date: "Thứ tư hàng tuần từ ngày 30/11/2022.",
     contents: [
       `- Đến CGV vào thứ tư hàng tuần để tận hưởng những bộ phim cực hay với giá cực ưu đãi các bạn nhé! Không cần chờ đợi đến cuối tuần, hãy đến CGV để nạp lại năng lượng nào!`,
@@ -234,7 +234,7 @@ const offers = [
   {
     id: "d_12",
     name: "NĂNG LƯỢNG TRÀN ĐẦY - NHẬN NGAY TÚI HOT",
-    img: "./img/news_detail_img_d12.jpg",
+    img: "/src/assets/img/news_detail_img_d12.jpg",
     date: "Từ ngày 25/11 - 11/12/2022 hoặc đến khi hết quà tặng",
     contents: [
       "- Khách hàng mua 01 Milo Premium Combo sẽ được tặng 01 Túi Milo Eco Friendly.",
@@ -260,7 +260,7 @@ const news = [
   {
     id: "n_1",
     name: "BHD STAR GARDEN",
-    img: "./img/news_detail_img_n1.jpg",
+    img: "/src/assets/img/news_detail_img_n1.jpg",
     title:
       "- TƯNG BỪNG KHAI TRƯƠNG RẠP CHIẾU PHIM BHD STAR THE GARDEN - RỘN RÀNG CÙNG CHUỖI ƯU ĐÃI SIÊU KHỦNG.",
     contents: [
@@ -278,7 +278,7 @@ const news = [
   {
     id: "n_2",
     name: "QUÉT MÃ QR NHANH VÀO RẠP!",
-    img: "./img/news_detail_img_n2.jpg",
+    img: "/src/assets/img/news_detail_img_n2.jpg",
     title:
       "- Với tiêu chí GO GREEN chung tay bảo vệ môi trường của BHD Star Cineplex ☘️ chúng tôi hy vọng đóng góp nho nhỏ sẽ tạo nên kết quả to to.",
     contents: [
@@ -292,7 +292,7 @@ const news = [
   {
     id: "n_3",
     name: "ỨNG DỤNG MUA VÉ MỚI",
-    img: "./img/news_detail_img_n3.jpg",
+    img: "/src/assets/img/news_detail_img_n3.jpg",
     title: `Tin vui cho đại gia đình BHD Star đây!!!
     Từ hôm nay, việc đặt vé trở nên tiện lợi hơn bao giờ hết với phiên bản ứng dụng di động BHD Star.`,
     contents: [
@@ -309,7 +309,7 @@ const news = [
   {
     id: "n_4",
     name: "ĐIỂM HẸN MỚI CỦA GIỚI TRẺ",
-    img: "./img/news_detail_img_n4.jpg",
+    img: "/src/assets/img/news_detail_img_n4.jpg",
     title: "- Điểm hẹn của giới trẻ Sài Thành.",
     contents: [
       `- Rạp chiếu phim BHD Star 3/2 vừa thực hiện một khu vực chụp hình siêu đáng yêu với chú gấu Brown “nổi tiếng” 
@@ -325,7 +325,7 @@ const news = [
   {
     id: "n_5",
     name: "THẺ THÀNH VIÊN ĐIỆN TỬ",
-    img: "./img/news_detail_img_n5.jpg",
+    img: "/src/assets/img/news_detail_img_n5.jpg",
     title: "- Hướng dẫn mua vé trên ứng dụng CGV.",
     contents: [
       `- Bước 1: Quét mã QR Code để tải app CGV.`,
@@ -338,7 +338,7 @@ const news = [
   {
     id: "n_6",
     name: "BHD STAR HUẾ",
-    img: "./img/news_detail_img_n6.jpg",
+    img: "/src/assets/img/news_detail_img_n6.jpg",
     title:
       "- HCM, ngày 04/04/2018 – Cụm rạp chiếu phim BHD Star Cineplex sẽ khai trương rạp đầu tiên tại TP. Huế vào ngày 19/05/2018 với 4 phòng chiếu gần 800 ghế.",
     contents: [
@@ -355,7 +355,7 @@ const news = [
   {
     id: "n_7",
     name: "ĐƯỜNG DÂY NÓNG BHD STAR",
-    img: "./img/news_detail_img_n7.jpg",
+    img: "/src/assets/img/news_detail_img_n7.jpg",
     title:
       "- Từ ngày 15.10.2017, Đường Dây Nóng của BHD Star chính thức hoạt động.",
     contents: [
@@ -366,7 +366,7 @@ const news = [
   {
     id: "n_8",
     name: "BHD STAR PHẠM NGỌC THẠCH",
-    img: "./img/news_detail_img_n8.jpg",
+    img: "/src/assets/img/news_detail_img_n8.jpg",
     title:
       "- Bắt đầu từ 02/11/2016, BHD Star chính thức khai trương cụm rạp đầu tiên tại Hà Nội: BHD STAR VINCOM PHẠM NGỌC THẠCH, tầng 8 TTTM Vincom, số 2 Phạm Ngọc Thạch, Đống Đa, Hà Nội.",
     contents: [
