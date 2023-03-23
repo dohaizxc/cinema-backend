@@ -23,7 +23,7 @@ const offersShort = [
     id: "d_4",
     img: "/src/assets/img/news_img_d4.jpg",
     name: "PHIM TƯƠNG TÁC PHI VỤ NỬA ĐÊM",
-    date: "TỪ 25/11/2022",
+    date: "Từ 25/11/2022",
   },
   {
     id: "d_5",
@@ -80,13 +80,13 @@ const newssShort = [
     id: "n_1",
     img: "/src/assets/img/news_img_n1.jpg",
     name: "BHD STAR GARDEN",
-    date: "TỪ 01/12/2022",
+    date: "Từ 01/12/2022",
   },
   {
     id: "n_2",
     img: "/src/assets/img/news_img_n2.jpg",
     name: "QUÉT MÃ QR NHANH VÀO RẠP",
-    date: "TỪ 12/08/2019",
+    date: "Từ 12/08/2019",
   },
   {
     id: "n_3",
@@ -317,7 +317,7 @@ const offers = [
     id: "d_10",
     name: "CHƯƠNG TRÌNH ƯU ĐÃI DÀNH CHO CHỦ THẺ NGÂN HÀNG BẢN VIỆT TẠI CGV",
     img: "/src/assets/img/news_detail_img_d10.jpg",
-    date: "Thứ Năm, Thứ Sáu, Thứ Bảy và Chủ Nhật hàng tuần từ ngày  30/11/2022– 31/12/2023.",
+    date: "Thứ Năm, Thứ Sáu, Thứ Bảy và Chủ Nhật hàng tuần từ ngày  30/11/2022 – 31/12/2023.",
     contents: [
       "- Mua 02 vé xem phim CGV chỉ với 90.000 đồng khi mua vé trực tuyến trên ứng dụng CGV Cinema hoặc website www.cgv.vn.",
       "- Số lượt ưu đãi áp dụng: Từ 01/12/2022 – 31/03/2023 áp dụng 20 ưu đãi/ ngày khuyến mãi.",
@@ -511,21 +511,15 @@ const getOffers = asyncHandler(async (req, res) => {
   res.json(offersShort);
 });
 
-const getNewsDetail = asyncHandler(async (req, res) => {
+const getNewsOfferDetail = asyncHandler(async (req, res) => {
   const id = req.params.id;
-  const newsDetail = news.find((x) => x.id === id);
+  let newsDetail = news.find((x) => x.id === id);
+  if (!newsDetail) newsDetail = offers.find((x) => x.id === id);
   res.json(newsDetail);
-});
-
-const getOfferDetail = asyncHandler(async (req, res) => {
-  const id = req.params.id;
-  const offerDetail = offers.find((x) => x.id === id);
-  res.json(offerDetail);
 });
 
 module.exports = {
   getNews,
   getOffers,
-  getNewsDetail,
-  getOfferDetail,
+  getNewsOfferDetail,
 };
