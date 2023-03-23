@@ -34,6 +34,7 @@ app.use("/food", require("./routes/foodRoutes"));
 app.use("/showtime", require("./routes/showtimeRoutes"));
 app.use("/ticket", require("./routes/ticketRoutes"));
 app.use("/user", require("./routes/userRotes"));
+app.use("/newsoffer", require("./routes/newsOfferRoutes"));
 app.use(errorHandler);
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
