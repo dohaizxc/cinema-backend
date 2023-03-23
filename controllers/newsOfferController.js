@@ -79,50 +79,50 @@ const newssShort = [
   {
     id: "n_1",
     img: "/src/assets/img/news_img_n1.jpg",
-    name: "BHD STAR GARDEN",
-    date: "Từ 01/12/2022",
+    name: "THÔNG BÁO TIÊU CHÍ PHÂN LOẠI ĐỘ TUỔI XEM PHIM",
+    date: "Từ 01/01/2017",
   },
   {
     id: "n_2",
     img: "/src/assets/img/news_img_n2.jpg",
-    name: "QUÉT MÃ QR NHANH VÀO RẠP",
+    name: "GIÁO DỤC CÙNG ĐIỆN ẢNH",
     date: "Từ 12/08/2019",
   },
   {
     id: "n_3",
     img: "/src/assets/img/news_img_n3.jpg",
-    name: "ỨNG DỤNG MUA VÉ MỚI",
-    date: "01/11/2022 - 31/12/2022",
+    name: "CHẠM MỘT GIÂY, VÀO RẠP NGAY",
+    date: "Từ 01/01/2022",
   },
   {
     id: "n_4",
     img: "/src/assets/img/news_img_n4.jpg",
     name: "ĐIỂM HẸN MỚI CỦA GIỚI TRẺ",
-    date: "Từ 01/12/2022",
+    date: "Từ 01/01/2022",
   },
   {
     id: "n_5",
     img: "/src/assets/img/news_img_n5.jpg",
-    name: "THẺ THÀNH VIÊN ĐIỆN TỬ",
-    date: "11/11/2022 - 29/11/2022",
+    name: "TRẢI NGHIỆM MÁY LẤY VÉ TỰ ĐỘNG",
+    date: "Từ 01/01/2022",
   },
   {
     id: "n_6",
     img: "/src/assets/img/news_img_n6.jpg",
-    name: "BHD STAR HUẾ",
-    date: "Từ 01/12/2022",
+    name: "EASY ONLINE – EASY PAYMENT",
+    date: "Từ 01/01/2022",
   },
   {
     id: "n_7",
     img: "/src/assets/img/news_img_n7.jpg",
-    name: "ĐƯỜNG DÂY NÓNG BHD STAR",
-    date: "Từ 01/12/2022",
+    name: "TRẢI NGHIỆM TÍNH NĂNG THANH TOÁN TRỰC TUYẾN MỚI",
+    date: "Từ 01/01/2022",
   },
   {
     id: "n_8",
     img: "/src/assets/img/news_img_n8.jpg",
-    name: "BHD STAR PHẠM NGỌC THẠCH",
-    date: "Từ 03/11/2016",
+    name: "THÔNG BÁO THAY ĐỔI HÓA ĐƠN TRÊN VÉ XEM PHIM SANG HÓA ĐƠN ĐIỆN TỬ",
+    date: "Từ 13/04/2022",
   },
 ];
 
@@ -385,7 +385,7 @@ const offers = [
 const news = [
   {
     id: "n_1",
-    name: "BHD STAR GARDEN",
+    name: "THÔNG BÁO TIÊU CHÍ PHÂN LOẠI ĐỘ TUỔI XEM PHIM",
     img: "/src/assets/img/news_detail_img_n1.jpg",
     title:
       "- TƯNG BỪNG KHAI TRƯƠNG RẠP CHIẾU PHIM BHD STAR THE GARDEN - RỘN RÀNG CÙNG CHUỖI ƯU ĐÃI SIÊU KHỦNG.",
@@ -403,7 +403,7 @@ const news = [
   },
   {
     id: "n_2",
-    name: "QUÉT MÃ QR NHANH VÀO RẠP!",
+    name: "GIÁO DỤC CÙNG ĐIỆN ẢNH!",
     img: "/src/assets/img/news_detail_img_n2.jpg",
     title:
       "- Với tiêu chí GO GREEN chung tay bảo vệ môi trường của BHD Star Cineplex ☘️ chúng tôi hy vọng đóng góp nho nhỏ sẽ tạo nên kết quả to to.",
@@ -417,7 +417,7 @@ const news = [
   },
   {
     id: "n_3",
-    name: "ỨNG DỤNG MUA VÉ MỚI",
+    name: "CHẠM MỘT GIÂY, VÀO RẠP NGAY",
     img: "/src/assets/img/news_detail_img_n3.jpg",
     title: `Tin vui cho đại gia đình BHD Star đây!!!
     Từ hôm nay, việc đặt vé trở nên tiện lợi hơn bao giờ hết với phiên bản ứng dụng di động BHD Star.`,
@@ -450,7 +450,7 @@ const news = [
   },
   {
     id: "n_5",
-    name: "THẺ THÀNH VIÊN ĐIỆN TỬ",
+    name: "TRẢI NGHIỆM MÁY LẤY VÉ TỰ ĐỘNG",
     img: "/src/assets/img/news_detail_img_n5.jpg",
     title: "- Hướng dẫn mua vé trên ứng dụng CGV.",
     contents: [
@@ -463,24 +463,24 @@ const news = [
   },
   {
     id: "n_6",
-    name: "BHD STAR HUẾ",
+    name: "EASY ONLINE – EASY PAYMENT",
     img: "/src/assets/img/news_detail_img_n6.jpg",
     title:
       "- HCM, ngày 04/04/2018 – Cụm rạp chiếu phim BHD Star Cineplex sẽ khai trương rạp đầu tiên tại TP. Huế vào ngày 19/05/2018 với 4 phòng chiếu gần 800 ghế.",
     contents: [
       `- Thành Phố Huế là điểm hẹn du lịch nổi tiếng trong và ngoài nước, chính vì thế nhu cầu vui chơi, giải trí của du khách và cả người dân Cố Đô cũng rất cao và đa dạng. 
       Nắm bắt và thấu hiểu được điều này, BHD Star sẽ chính thức khai trương rạp chiếu phim đầu tiên của mình tại mảnh đất mộng mơ sau chuỗi các rạp phim tại TPHCM và Hà Nội.`,
-      `- BHD Star Huế sẽ “chào làng” vào ngày 19/5/2018, tại địa chỉ Vincom Huế, 50A Hùng Vương tổ 10, Phú Nhuận, Thành phố Huế, Thừa Thiên Huế.`,
+      `- EASY ONLINE – EASY PAYMENT sẽ “chào làng” vào ngày 19/5/2018, tại địa chỉ Vincom Huế, 50A Hùng Vương tổ 10, Phú Nhuận, Thành phố Huế, Thừa Thiên Huế.`,
       `- Được trang bị cơ sở vật chất hiện đại, phòng chiếu với hệ thống âm thanh hình ảnh tân tiến và dịch vụ chuyên nghiệp, đến với BHD STAR, khán giả sẽ cảm nhận được một 
       “thần thái” khác biệt và “chất như nước cất.”`,
-      `- Với mong muốn trở thành điểm giải trí hấp dẫn mới cho khán giả Huế, BHD Star Huế còn sẵn sàng nhiều cơn bão khuyến mãi siêu hấp dẫn và sự kiện khai trương đặc sắc chờ 
+      `- Với mong muốn trở thành điểm giải trí hấp dẫn mới cho khán giả Huế, EASY ONLINE – EASY PAYMENT còn sẵn sàng nhiều cơn bão khuyến mãi siêu hấp dẫn và sự kiện khai trương đặc sắc chờ 
       đón khán giả “phá đảo”.`,
       `- Cuộc hẹn tháng 5 đã đến rất gần, hãy sẵn sàng cùng hội cạ cứng khám phá những bất ngờ tại cụm rạp chiếu phim BHD Star.`,
     ],
   },
   {
     id: "n_7",
-    name: "ĐƯỜNG DÂY NÓNG BHD STAR",
+    name: "TRẢI NGHIỆM TÍNH NĂNG THANH TOÁN TRỰC TUYẾN MỚI",
     img: "/src/assets/img/news_detail_img_n7.jpg",
     title:
       "- Từ ngày 15.10.2017, Đường Dây Nóng của BHD Star chính thức hoạt động.",
@@ -491,7 +491,7 @@ const news = [
   },
   {
     id: "n_8",
-    name: "BHD STAR PHẠM NGỌC THẠCH",
+    name: "THÔNG BÁO THAY ĐỔI HÓA ĐƠN TRÊN VÉ XEM PHIM SANG HÓA ĐƠN ĐIỆN TỬ",
     img: "/src/assets/img/news_detail_img_n8.jpg",
     title:
       "- Bắt đầu từ 02/11/2016, BHD Star chính thức khai trương cụm rạp đầu tiên tại Hà Nội: BHD STAR VINCOM PHẠM NGỌC THẠCH, tầng 8 TTTM Vincom, số 2 Phạm Ngọc Thạch, Đống Đa, Hà Nội.",
