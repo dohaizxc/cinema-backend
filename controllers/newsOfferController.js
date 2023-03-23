@@ -1,5 +1,131 @@
 const asyncHandler = require("express-async-handler");
 
+const offersShort = [
+  {
+    id: "d_1",
+    img: "/src/assets/img/news_img_d1.jpg",
+    name: "LỄ HỘI MERCHANDISE",
+    date: "07/12/2022 - 09/12/2022",
+  },
+  {
+    id: "d_2",
+    img: "/src/assets/img/news_img_d2.jpg",
+    name: "TUẦN LỄ PHIM KHOA HỌC CÔNG NGHỆ QUỐC TẾ VINFUTURE 2022",
+    date: "06/12/2022 - 11/12/2022",
+  },
+  {
+    id: "d_3",
+    img: "/src/assets/img/news_img_d3.jpg",
+    name: "MÙA BOM TẤN CUỐI NĂM ZALOPAY TẶNG VÉ 9K!",
+    date: "05/12/2022 - 31/12/2022",
+  },
+  {
+    id: "d_4",
+    img: "/src/assets/img/news_img_d4.jpg",
+    name: "PHIM TƯƠNG TÁC PHI VỤ NỬA ĐÊM",
+    date: "TỪ 25/11/2022",
+  },
+  {
+    id: "d_5",
+    img: "/src/assets/img/news_img_d5.jpg",
+    name: "BÙNG CHÁY WORLD CUP ĐI GROUP THÊM VUI",
+    date: "24/11/2022 - 14/12/2022",
+  },
+  {
+    id: "d_6",
+    img: "/src/assets/img/news_img_d6.jpg",
+    name: "RA RẠP GẶP LUFFY RINH QUÀ XINH HẾT Ý",
+    date: "Từ 02/12/2022",
+  },
+  {
+    id: "d_7",
+    img: "/src/assets/img/news_img_d7.jpg",
+    name: "GIẢM TƯNG BỪNG, GIẢM ĐẬM SÂU",
+    date: "05/12/2022 - 31/12/2022",
+  },
+  {
+    id: "d_8",
+    img: "/src/assets/img/news_img_d8.jpg",
+    name: "QUÀ TẶNG SINH NHẬT THÀNH VIÊN CGV THÁNG 12",
+    date: "01/12/2022 - 31/12/2022",
+  },
+  {
+    id: "d_9",
+    img: "/src/assets/img/news_img_d9.jpg",
+    name: "CHƯƠNG TRÌNH ƯU ĐÃI DÀNH CHO CHỦ THẺ CITI",
+    date: "02/12/2022 - 02/06/2023",
+  },
+  {
+    id: "d_10",
+    img: "/src/assets/img/news_img_d10.jpg",
+    name: "CHƯƠNG TRÌNH ƯU ĐÃI DÀNH CHO CHỦ THẺ NGÂN HÀNG BẢN VIỆT TẠI CGV",
+    date: "30/11/2022 - 31/12/2023",
+  },
+  {
+    id: "d_11",
+    img: "/src/assets/img/news_img_d11.jpg",
+    name: "ƯU ĐÃI THỨ 4 VUI VẺ CHIA SẺ YÊU THƯƠNG",
+    date: "Từ 30/11/2022",
+  },
+  {
+    id: "d_12",
+    img: "/src/assets/img/news_img_d12.jpg",
+    name: "NĂNG LƯỢNG TRÀN ĐẦY - NHẬN NGAY TÚI HOT",
+    date: "25/11/2022 - 11/12/2022",
+  },
+];
+
+const newssShort = [
+  {
+    id: "n_1",
+    img: "/src/assets/img/news_img_n1.jpg",
+    name: "BHD STAR GARDEN",
+    date: "TỪ 01/12/2022",
+  },
+  {
+    id: "n_2",
+    img: "/src/assets/img/news_img_n2.jpg",
+    name: "QUÉT MÃ QR NHANH VÀO RẠP",
+    date: "TỪ 12/08/2019",
+  },
+  {
+    id: "n_3",
+    img: "/src/assets/img/news_img_n3.jpg",
+    name: "ỨNG DỤNG MUA VÉ MỚI",
+    date: "01/11/2022 - 31/12/2022",
+  },
+  {
+    id: "n_4",
+    img: "/src/assets/img/news_img_n4.jpg",
+    name: "ĐIỂM HẸN MỚI CỦA GIỚI TRẺ",
+    date: "Từ 01/12/2022",
+  },
+  {
+    id: "n_5",
+    img: "/src/assets/img/news_img_n5.jpg",
+    name: "THẺ THÀNH VIÊN ĐIỆN TỬ",
+    date: "11/11/2022 - 29/11/2022",
+  },
+  {
+    id: "n_6",
+    img: "/src/assets/img/news_img_n6.jpg",
+    name: "BHD STAR HUẾ",
+    date: "Từ 01/12/2022",
+  },
+  {
+    id: "n_7",
+    img: "/src/assets/img/news_img_n7.jpg",
+    name: "ĐƯỜNG DÂY NÓNG BHD STAR",
+    date: "Từ 01/12/2022",
+  },
+  {
+    id: "n_8",
+    img: "/src/assets/img/news_img_n8.jpg",
+    name: "BHD STAR PHẠM NGỌC THẠCH",
+    date: "Từ 03/11/2016",
+  },
+];
+
 const offers = [
   {
     id: "d_1",
@@ -377,20 +503,29 @@ const news = [
   },
 ];
 
-module.exports = {
-  news,
-  offers,
-};
-
 const getNews = asyncHandler(async (req, res) => {
-  res.json(news);
+  res.json(newssShort);
 });
 
 const getOffers = asyncHandler(async (req, res) => {
-  res.json(offers);
+  res.json(offersShort);
+});
+
+const getNewsDetail = asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const newsDetail = news.find((x) => x.id === id);
+  res.json(newsDetail);
+});
+
+const getOfferDetail = asyncHandler(async (req, res) => {
+  const id = req.params.id;
+  const offerDetail = offers.find((x) => x.id === id);
+  res.json(offerDetail);
 });
 
 module.exports = {
   getNews,
   getOffers,
+  getNewsDetail,
+  getOfferDetail,
 };
