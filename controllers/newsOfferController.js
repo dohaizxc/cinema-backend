@@ -96,7 +96,7 @@ const newssShort = [
   },
   {
     id: "n_4",
-    img: "https://www.cgv.vn/media/wysiwyg/2021/092021/_CGV_L_u_ng_350_x_495.jpg",
+    img: "https://www.cgv.vn/media/wysiwyg/2021/092021/_CGV_L_u_ng_240_x_201.jpg",
     name: "ĐIỂM HẸN MỚI CỦA GIỚI TRẺ",
     date: "Từ 01/01/2022",
   },
